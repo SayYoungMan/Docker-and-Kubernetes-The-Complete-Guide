@@ -60,3 +60,6 @@
 
 ## Starting with a Shell
 - `docker run -it <image> sh` will create, start and run the shell inside the container and attach the container
+
+## Container Isolation
+- Two containers have absolutely isolated file systems so creation of file in one is not reflected in another.
