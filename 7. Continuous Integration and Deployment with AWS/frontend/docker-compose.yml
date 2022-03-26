@@ -2,18 +2,7 @@ version: '3'
 services:
   web:
     build:
-      context: . # Specify directory where the Dockerfile needs to be found
-      dockerfile: Dockerfile.dev
+      context: .
+      dockerfile: Dockerfile
     ports:
-      - "3000:3000"
-    volumes:
-      - /app/node_modules
-      - .:/app # . represents current working directory
-  tests:
-    build:
-      context: . 
-      dockerfile: Dockerfile.dev
-    volumes:
-      - /app/node_modules
-      - .:/app
-    command: ["npm", "run", "test"]
+      - '80:80'
