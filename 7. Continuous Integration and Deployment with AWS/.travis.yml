@@ -1,0 +1,17 @@
+# This is just the content from the lecture for learning purpose.
+# I will instead use Github Action so this file is not directly used.
+
+# Telling travis that we need sudo level
+sudo: required
+language: generic
+# Tell travis to install docker
+services:
+  - docker
+
+# Before doing tests
+before_install:
+  - docker build -t sayyoungman/docker-react -f Dockerfile.dev .  # Tag it to refer to it later
+
+# Contain all the commands that is required to run tests
+script:
+  - docker run -e CI=true sayyoungman/docker-react npm run test
